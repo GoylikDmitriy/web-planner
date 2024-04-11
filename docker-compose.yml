@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  front-end:
+    build: front-end
+    restart: always
+    ports:
+      - '3000:3000'
+
+  postgres-planner:
+    build: postgres-planner
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=planner
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - PGDATA=/data/postgres-planner
+    volumes:
+      - ./postgres-planner-data:/data/postgres-planner
+
+  planner:
+    build: planner
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres-planner
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-planner:5432/planner
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234

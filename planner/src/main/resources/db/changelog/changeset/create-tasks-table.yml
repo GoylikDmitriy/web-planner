@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-tasks
+      author: Goylik
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: task
+                  type: varchar
+              - column:
+                  name: start_date
+                  type: date
+              - column:
+                  name: end_date
+                  type: date
+              - column:
+                  name: completion_date
+                  type: date
+              - column:
+                  name: completed
+                  type: boolean
+              - column:
+                  name: employee_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_employees
+                    referencedColumnNames: id
+                    referencedTableName: employees

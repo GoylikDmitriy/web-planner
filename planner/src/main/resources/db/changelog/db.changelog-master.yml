@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-employees-table.yml
+  - include:
+      file: db/changelog/changeset/create-tasks-table.yml
+  - include:
+      file: db/changelog/changeset/insert-employees.yml
+  - include:
+      file: db/changelog/changeset/insert-tasks.yml

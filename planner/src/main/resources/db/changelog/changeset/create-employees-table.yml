@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-employees
+      author: Goylik
+      changes:
+        - createTable:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar
+              - column:
+                  name: middle_name
+                  type: varchar

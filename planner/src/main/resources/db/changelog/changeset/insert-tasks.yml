@@ -1,0 +1,110 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-tasks
+      author: Goylik
+      changes:
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: task
+                  value: "Задача 1"
+              - column:
+                  name: start_date
+                  value: "2024-04-04"
+              - column:
+                  name: end_date
+                  value: "2024-04-06"
+              - column:
+                  name: completion_date
+                  value: "2024-04-05"
+              - column:
+                  name: completed
+                  value: "true"
+              - column:
+                  name: employee_id
+                  value: "1"
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: task
+                  value: "Задача 2"
+              - column:
+                  name: start_date
+                  value: "2024-04-09"
+              - column:
+                  name: end_date
+                  value: "2024-04-30"
+              - column:
+                  name: completion_date
+                  value: "null"
+              - column:
+                  name: completed
+                  value: "false"
+              - column:
+                  name: employee_id
+                  value: "1"
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: task
+                  value: "Задача 3"
+              - column:
+                  name: start_date
+                  value: "2024-04-01"
+              - column:
+                  name: end_date
+                  value: "2024-04-16"
+              - column:
+                  name: completion_date
+                  value: "null"
+              - column:
+                  name: completed
+                  value: "false"
+              - column:
+                  name: employee_id
+                  value: "1"
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: task
+                  value: "Задача 4"
+              - column:
+                  name: start_date
+                  value: "2024-04-03"
+              - column:
+                  name: end_date
+                  value: "2024-05-04"
+              - column:
+                  name: completion_date
+                  value: "null"
+              - column:
+                  name: completed
+                  value: "false"
+              - column:
+                  name: employee_id
+                  value: "2"
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: task
+                  value: "Задача 5"
+              - column:
+                  name: start_date
+                  value: "2024-04-05"
+              - column:
+                  name: end_date
+                  value: "2024-04-07"
+              - column:
+                  name: completion_date
+                  value: "2024-04-06"
+              - column:
+                  name: completed
+                  value: "true"
+              - column:
+                  name: employee_id
+                  value: "2"

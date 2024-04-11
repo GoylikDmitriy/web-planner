@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-employees
+      author: Goylik
+      changes:
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: last_name
+                  value: "Иванов"
+              - column:
+                  name: first_name
+                  value: "Иван"
+              - column:
+                  name: middle_name
+                  value: "Иванович"
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: last_name
+                  value: "Петров"
+              - column:
+                  name: first_name
+                  value: "Петр"
+              - column:
+                  name: middle_name
+                  value: "Петрович"
