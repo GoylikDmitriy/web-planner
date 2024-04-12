@@ -58,13 +58,16 @@ public class PlannerServiceImpl implements PlannerService {
     private List<Task> getTasksInDateRange(List<Task> tasks, LocalDate startDate, LocalDate endDate) {
         log.info("Filtering tasks in a date range. start date = {}, end date = {}", startDate, endDate);
         return tasks.stream()
-                .filter(t -> isTaskInDateRange(t, startDate))
+                .filter(t -> isTaskInDateRange(t, startDate, endDate))
                 .toList();
     }
 
-    private boolean isTaskInDateRange(Task task, LocalDate startDate) {
-        return task.getStartDate().isEqual(startDate) ||
-                task.getStartDate().isAfter(startDate);
+    private boolean isTaskInDateRange(Task task, LocalDate startDate, LocalDate endDate) {
+        LocalDate taskStartDate = task.getStartDate();
+        LocalDate taskEndDate = task.getEndDate();
+
+        return (taskStartDate.isEqual(endDate) || taskStartDate.isBefore(endDate)) &&
+                (taskEndDate.isAfter(startDate) || taskEndDate.isEqual(startDate));
     }
 
     private EmployeeDto mapEmployee(Employee employee) {
