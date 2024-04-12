@@ -66,8 +66,8 @@ public class PlannerServiceImpl implements PlannerService {
         LocalDate taskStartDate = task.getStartDate();
         LocalDate taskEndDate = task.getEndDate();
 
-        return (taskStartDate.isEqual(startDate) || taskStartDate.isAfter(startDate)) &&
-                (taskEndDate.isBefore(endDate) || taskEndDate.isEqual(endDate));
+        return (taskStartDate.isEqual(endDate) || taskStartDate.isBefore(endDate)) &&
+                (taskEndDate.isAfter(startDate) || taskEndDate.isEqual(startDate));
     }
 
     private EmployeeDto mapEmployee(Employee employee) {
